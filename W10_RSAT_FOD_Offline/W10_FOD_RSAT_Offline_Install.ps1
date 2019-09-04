@@ -12,7 +12,7 @@ $FoD_Source = ".\"
 
 #Grab the available RSAT Features
 
-$RSAT_FoD = Get-WindowsCapability –Online | Where-Object Name -like 'RSAT*'
+$RSAT_FoD = Get-WindowsCapability -Online | Where-Object Name -like 'RSAT*'
 
 #Install RSAT Tools
 
