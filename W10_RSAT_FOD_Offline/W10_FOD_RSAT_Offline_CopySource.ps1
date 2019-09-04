@@ -19,13 +19,13 @@ $dest = New-Item -ItemType Directory -Path "$env:SystemDrive\temp\RSAT_1903_$lan
 #get RSAT files 
 
 Get-ChildItem ($path+":\") -name -recurse -include *~amd64~~.cab,*~wow64~~.cab,*~amd64~$lang~.cab,*~wow64~$lang~.cab -exclude *languagefeatures*,*Holographic*,*NetFx3*,*OpenSSH*,*Msix* |
-ForEach-Object {copy-item -Path ($path+“:\”+$_) -Destination $dest.FullName -Force -Container}
+ForEach-Object {copy-item -Path ($path+":\"+$_) -Destination $dest.FullName -Force -Container}
 
 #get metadata
 
 copy-item ($path+":\metadata") -Destination $dest.FullName -Recurse
 
-copy-item ($path +“:\"+“FoDMetadata_Client.cab”) -Destination $dest.FullName -Force -Container
+copy-item ($path +":\"+"FoDMetadata_Client.cab") -Destination $dest.FullName -Force -Container
 
 #Dismount ISO
 
